@@ -12,16 +12,6 @@ const SOCIAL_LINKS = [
 
 const GENERAL_LINKS = [
   {
-    icon: "🛍️",
-    title: "My Etsy Store",
-    desc: "Peachy Keen Co Studio",
-    url: "https://www.etsy.com/ca/shop/PeachyKeenCoStudio?ref=profile_header",
-    logo: "images/peachy-keen-logo.png",
-    logoFit: "cover",
-    logoZoom: 1.35,
-    social: { icon: "instagram", label: "@peachykeencostudio", url: "https://www.instagram.com/peachykeencostudio/" },
-  },
-  {
     icon: "🎁",
     title: "Oh Canada Gifts",
     url: "https://ohcanadagifts.ca/",
@@ -36,6 +26,16 @@ const GENERAL_LINKS = [
     url: "https://www.sitereports.online/",
     logo: "images/site-reports-logo.png",
     logoZoom: 1.6,
+  },
+  {
+    icon: "🛍️",
+    title: "My Etsy Store",
+    desc: "Peachy Keen Co Studio",
+    url: "https://www.etsy.com/ca/shop/PeachyKeenCoStudio?ref=profile_header",
+    logo: "images/peachy-keen-logo.png",
+    logoFit: "cover",
+    logoZoom: 1.35,
+    social: { icon: "instagram", label: "@peachykeencostudio", url: "https://www.instagram.com/peachykeencostudio/" },
   },
 ];
 
