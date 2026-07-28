@@ -29,8 +29,8 @@ const GENERAL_LINKS = [
   },
   {
     icon: "🛍️",
-    title: "My Etsy Store",
-    desc: "Peachy Keen Co Studio",
+    title: "Peachy Keen Co Studio",
+    desc: "Etsy Store",
     url: "https://www.etsy.com/ca/shop/PeachyKeenCoStudio?ref=profile_header",
     logo: "images/peachy-keen-logo.png",
     logoFit: "cover",
