@@ -78,7 +78,7 @@ function el(tag, className, html) {
 function renderSocials() {
   const container = document.getElementById("socials");
   SOCIAL_LINKS.forEach((s) => {
-    const a = el("a", "social-link", ICONS[s.icon] || "");
+    const a = el("a", `social-link social-link--${s.icon}`, ICONS[s.icon] || "");
     a.href = s.url;
     a.target = "_blank";
     a.rel = "noopener noreferrer";

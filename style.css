@@ -139,6 +139,9 @@ body {
 
 .social-link svg { width: 18px; height: 18px; }
 
+.social-link--pinterest { color: #E60023; }
+.social-link--pinterest:hover { background: #E60023; border-color: #E60023; color: #fff; }
+
 .section { margin-bottom: 36px; }
 
 .section-title {
