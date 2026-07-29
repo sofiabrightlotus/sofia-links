@@ -8,6 +8,7 @@ const SHOW_BLOG = false;
 
 const SOCIAL_LINKS = [
   { name: "Pinterest", url: "https://ca.pinterest.com/00dohboi/", icon: "pinterest" },
+  { name: "Instagram", url: "https://www.instagram.com/sofiasidequests00/", icon: "instagram" },
 ];
 
 const GENERAL_LINKS = [
@@ -64,7 +65,7 @@ const BLOG_POSTS = [
 // ---------------------------------------------------------------------------
 
 const ICONS = {
-  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24"><defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#ig-grad)"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="17" cy="7" r="1.1" fill="#fff"/></svg>',
   pinterest: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.6.5.5 5.6.5 12c0 4.9 3 9.1 7.3 10.8-.1-.9-.2-2.3 0-3.3.2-.9 1.4-6 1.4-6s-.4-.7-.4-1.8c0-1.7.9-2.9 2.1-2.9 1 0 1.5.7 1.5 1.6 0 1-.6 2.5-1 3.9-.3 1.2.6 2.1 1.7 2.1 2.1 0 3.6-2.7 3.6-5.9 0-2.4-1.7-4.3-4.6-4.3-3.4 0-5.5 2.5-5.5 5.3 0 1 .3 1.6.7 2.2.2.2.2.3.1.6l-.3 1c-.1.3-.3.4-.6.3-1.7-.7-2.5-2.6-2.5-4.6 0-3.5 2.9-7.6 8.7-7.6 4.6 0 7.7 3.4 7.7 6.9 0 4.7-2.6 8.3-6.4 8.3-1.3 0-2.5-.7-2.9-1.5l-.8 3.1c-.3 1-.9 2.2-1.4 3 1.1.3 2.2.5 3.4.5 6.4 0 11.5-5.1 11.5-11.5S18.4.5 12 .5z"/></svg>',
 };
 
