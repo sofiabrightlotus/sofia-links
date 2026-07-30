@@ -135,23 +135,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--card);
-  border: 1px solid var(--border);
-  color: var(--text);
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  width: 30px;
+  height: 30px;
+  color: var(--accent-3);
+  transition: transform .15s ease, opacity .15s ease;
 }
 
 .social-link:hover {
-  background: var(--card-hover);
-  border-color: var(--accent);
+  opacity: 0.75;
   transform: translateY(-2px);
 }
 
-.social-link svg { width: 18px; height: 18px; }
-.social-link--instagram svg { width: 22px; height: 22px; }
+.social-link svg { width: 100%; height: 100%; }
 
 .socials-label {
   margin-top: 8px;
@@ -160,9 +155,6 @@ body {
   opacity: 0.6;
   text-align: center;
 }
-
-.social-link--pinterest { color: #E60023; }
-.social-link--pinterest:hover { background: #E60023; border-color: #E60023; color: #fff; }
 
 .section { margin-bottom: 36px; }
 
@@ -243,6 +235,19 @@ body {
 
 .link-icon--logo.link-icon--fill img {
   object-fit: cover;
+}
+
+.link-icon--bare {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.link-icon--bare img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .link-icon--logo.link-icon--svg {
