@@ -16,8 +16,7 @@ const GENERAL_LINKS = [
     icon: "🎁",
     title: "Oh Canada Gifts",
     url: "https://ohcanadagifts.ca/",
-    logo: "images/oh-canada-logo.png",
-    logoFit: "cover",
+    logo: "images/oh-canada-gift-icon.png",
     social: { icon: "instagram", label: "@oh.canada.gifts", url: "https://www.instagram.com/oh.canada.gifts/" },
   },
   {
@@ -33,9 +32,7 @@ const GENERAL_LINKS = [
     title: "Peachy Keen Co Studio",
     desc: "Etsy Store",
     url: "https://www.etsy.com/ca/shop/PeachyKeenCoStudio?ref=profile_header",
-    logo: "images/peachy-keen-logo.png",
-    logoFit: "cover",
-    logoZoom: 1.35,
+    iconSvg: "peach",
     social: { icon: "instagram", label: "@peachykeencostudio", url: "https://www.instagram.com/peachykeencostudio/" },
   },
 ];
@@ -67,6 +64,7 @@ const BLOG_POSTS = [
 const ICONS = {
   instagram: '<svg viewBox="0 0 24 24"><defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#ig-grad)"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="17" cy="7" r="1.1" fill="#fff"/></svg>',
   pinterest: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.6.5.5 5.6.5 12c0 4.9 3 9.1 7.3 10.8-.1-.9-.2-2.3 0-3.3.2-.9 1.4-6 1.4-6s-.4-.7-.4-1.8c0-1.7.9-2.9 2.1-2.9 1 0 1.5.7 1.5 1.6 0 1-.6 2.5-1 3.9-.3 1.2.6 2.1 1.7 2.1 2.1 0 3.6-2.7 3.6-5.9 0-2.4-1.7-4.3-4.6-4.3-3.4 0-5.5 2.5-5.5 5.3 0 1 .3 1.6.7 2.2.2.2.2.3.1.6l-.3 1c-.1.3-.3.4-.6.3-1.7-.7-2.5-2.6-2.5-4.6 0-3.5 2.9-7.6 8.7-7.6 4.6 0 7.7 3.4 7.7 6.9 0 4.7-2.6 8.3-6.4 8.3-1.3 0-2.5-.7-2.9-1.5l-.8 3.1c-.3 1-.9 2.2-1.4 3 1.1.3 2.2.5 3.4.5 6.4 0 11.5-5.1 11.5-11.5S18.4.5 12 .5z"/></svg>',
+  peach: '<svg viewBox="0 0 24 24" fill="none" stroke="#820201" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.3c-3.4 0-6 3-6 6.7 0 3.6 2.6 7 6 7s6-3.4 6-7c0-3.7-2.6-6.7-6-6.7z"/><path d="M11.5 8.6c-1.2 1.6-1.2 4.4.2 6.6"/><path d="M12.5 7.6c.6-2 2.4-3 3.6-2.7"/></svg>',
 };
 
 function el(tag, className, html) {
@@ -109,7 +107,9 @@ function renderLinks() {
 
     const iconHtml = link.logo
       ? `<span class="${logoClasses}"><img src="${link.logo}" alt="${link.title} logo" loading="lazy"${zoomStyle} onerror="this.parentElement.textContent='${link.icon}'; this.parentElement.className='link-icon';" /></span>`
-      : `<span class="link-icon">${link.icon}</span>`;
+      : link.iconSvg
+        ? `<span class="link-icon link-icon--logo link-icon--svg">${ICONS[link.iconSvg] || ""}</span>`
+        : `<span class="link-icon">${link.icon}</span>`;
 
     a.innerHTML = `
       ${iconHtml}
