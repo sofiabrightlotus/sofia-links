@@ -3,9 +3,9 @@
   --bg-2: #1d2847;
   --text: #f2f2f4;
   --text-dim: #a3a6ad;
-  --border: #4c5c40;
-  --card: #404E37;
-  --card-hover: #4c5c40;
+  --border: #b0295f;
+  --card: #95204C;
+  --card-hover: #b0295f;
   --accent: #95204C;
   --accent-2: #26345B;
   --accent-3: #9F242F;
@@ -66,7 +66,7 @@ body {
   height: 60vh;
   background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
               radial-gradient(closest-side, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 70%),
-              radial-gradient(closest-side, color-mix(in srgb, var(--accent-4) 10%, transparent), transparent 70%);
+              radial-gradient(closest-side, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%);
   background-position: 20% 0%, 80% 10%, 50% 40%;
   background-size: 60% 60%, 55% 55%, 45% 45%;
   background-repeat: no-repeat;
