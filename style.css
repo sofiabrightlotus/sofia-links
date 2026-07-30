@@ -54,7 +54,7 @@ html, body {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Radley", Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman", Times, serif;
   line-height: 1.5;
   min-height: 100vh;
   overflow-x: hidden;
@@ -100,6 +100,14 @@ body {
   box-shadow: var(--shadow);
   margin-bottom: 12px;
   background: var(--card);
+}
+
+.name,
+.section-title,
+.link-title,
+.video-title,
+.blog-title {
+  font-family: "Radley", Georgia, serif;
 }
 
 .name {
