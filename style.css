@@ -300,6 +300,55 @@ button, input, textarea, select {
 
 .card-share svg { width: 15px; height: 15px; }
 
+.notice-section {
+  margin-bottom: 36px;
+}
+
+.notice-card {
+  background-color: #fbf1de;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(1.6em - 1px),
+    rgba(74, 125, 189, 0.55) calc(1.6em - 1px),
+    rgba(74, 125, 189, 0.55) 1.6em
+  );
+  background-position: 0 50px;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #2c2c2c;
+  position: relative;
+  padding-left: 46px;
+}
+
+.notice-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 26px;
+  width: 2px;
+  background: #c62828;
+}
+
+.notice-card:hover {
+  background-color: #f7ead2;
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.notice-card .link-title { color: #1c1c1c; }
+.notice-card .link-desc { color: #2c2c2c; line-height: 1.6em; }
+.notice-card .link-icon { color: #2c2c2c; }
+
+.notice-card .card-share {
+  color: #2c2c2c;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.notice-card .card-share:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
 .link-icon {
   font-size: 1.1rem;
   width: 24px;

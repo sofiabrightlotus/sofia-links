@@ -11,14 +11,16 @@ const SOCIAL_LINKS = [
   { name: "Instagram", url: "https://www.instagram.com/sofiasidequests00/", icon: "instagram" },
 ];
 
+const NOTICE = {
+  iconKey: "mail",
+  title: "Do you like this website?",
+  desc: "Those interested in having a customized website with a similar purpose as this one, built for them, send me an inquiry via email and we'll chat.",
+  copyValue: "sofia@brightlotus.ca",
+  share: true,
+  cardClass: "notice-card",
+};
+
 const GENERAL_LINKS = [
-  {
-    iconKey: "mail",
-    title: "Do you like this website?",
-    desc: "Those interested in having a customized website with a similar purpose as this one, built for them, send me an inquiry via email and we'll chat.",
-    copyValue: "sofia@brightlotus.ca",
-    share: true,
-  },
   {
     icon: "🎁",
     title: "Oh Canada Gifts",
@@ -141,9 +143,7 @@ function renderSocials() {
   });
 }
 
-function renderLinks() {
-  const container = document.getElementById("links");
-  GENERAL_LINKS.forEach((link) => {
+function buildLinkGroup(link) {
     const group = el("div", "link-group");
     const isLink = Boolean(link.url);
     const hasMore = Boolean(link.more || link.moreHtml);
@@ -274,8 +274,22 @@ function renderLinks() {
       group.appendChild(s);
     }
 
-    container.appendChild(group);
+    group.querySelector(".link-card").classList.add(...(link.cardClass ? [link.cardClass] : []));
+
+    return group;
+}
+
+function renderLinks() {
+  const container = document.getElementById("links");
+  GENERAL_LINKS.forEach((link) => {
+    container.appendChild(buildLinkGroup(link));
   });
+}
+
+function renderNotice() {
+  const container = document.getElementById("notice-card");
+  if (!container) return;
+  container.appendChild(buildLinkGroup(NOTICE));
 }
 
 function youtubeThumbFromUrl(url) {
@@ -353,6 +367,7 @@ function initShare() {
 }
 
 renderSocials();
+renderNotice();
 renderLinks();
 renderVideos();
 renderBlog();
