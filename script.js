@@ -13,11 +13,19 @@ const SOCIAL_LINKS = [
 
 const GENERAL_LINKS = [
   {
+    iconKey: "mail",
+    title: "Want a website like this?",
+    desc: "Those interested in having a website like this one built for them for a one-time fee; send me an inquiry via email.",
+    copyValue: "sofia@brightlotus.ca",
+    share: true,
+  },
+  {
     icon: "🎁",
     title: "Oh Canada Gifts",
     url: "https://ohcanadagifts.ca/",
     logo: "images/oh-canada-gift-icon.png",
     logoBare: true,
+    share: true,
     social: { icon: "instagram", label: "@oh.canada.gifts", url: "https://www.instagram.com/oh.canada.gifts/" },
   },
   {
@@ -27,6 +35,7 @@ const GENERAL_LINKS = [
     url: "https://www.sitereports.online/",
     logo: "images/site-reports-icon.png",
     logoBare: true,
+    share: true,
   },
   {
     icon: "🛍️",
@@ -35,7 +44,18 @@ const GENERAL_LINKS = [
     url: "https://www.etsy.com/ca/shop/PeachyKeenCoStudio?ref=profile_header",
     logo: "images/peachy-keen-icon.png",
     logoBare: true,
+    share: true,
     social: { icon: "instagram", label: "@peachykeencostudio", url: "https://www.instagram.com/peachykeencostudio/" },
+  },
+  {
+    iconKey: "contact",
+    title: "Contact Details",
+    toggle: true,
+    moreHtml: `
+      <div class="contact-name">Sofía</div>
+      <div class="contact-row contact-row--copy" data-copy="sofia@brightlotus.ca" title="Click to copy">${'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>'}<span>sofia@brightlotus.ca</span>${'<svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'}</div>
+      <div class="contact-row contact-row--copy" data-copy="https://sofiabrightlotus.github.io/sofia-links/" title="Click to copy">${'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 15l6-6"/><path d="M10 7l.9-.9a3.5 3.5 0 0 1 5 5l-.9.9"/><path d="M14 17l-.9.9a3.5 3.5 0 0 1-5-5l.9-.9"/></svg>'}<span>sofiabrightlotus.github.io/sofia-links</span>${'<svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'}</div>
+    `,
   },
 ];
 
@@ -66,13 +86,46 @@ const BLOG_POSTS = [
 const ICONS = {
   instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
   pinterest: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.6.5.5 5.6.5 12c0 4.9 3 9.1 7.3 10.8-.1-.9-.2-2.3 0-3.3.2-.9 1.4-6 1.4-6s-.4-.7-.4-1.8c0-1.7.9-2.9 2.1-2.9 1 0 1.5.7 1.5 1.6 0 1-.6 2.5-1 3.9-.3 1.2.6 2.1 1.7 2.1 2.1 0 3.6-2.7 3.6-5.9 0-2.4-1.7-4.3-4.6-4.3-3.4 0-5.5 2.5-5.5 5.3 0 1 .3 1.6.7 2.2.2.2.2.3.1.6l-.3 1c-.1.3-.3.4-.6.3-1.7-.7-2.5-2.6-2.5-4.6 0-3.5 2.9-7.6 8.7-7.6 4.6 0 7.7 3.4 7.7 6.9 0 4.7-2.6 8.3-6.4 8.3-1.3 0-2.5-.7-2.9-1.5l-.8 3.1c-.3 1-.9 2.2-1.4 3 1.1.3 2.2.5 3.4.5 6.4 0 11.5-5.1 11.5-11.5S18.4.5 12 .5z"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
+  contact: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H10l-4.5 3.5V16H6.5A2.5 2.5 0 0 1 4 13.5v-7z"/></svg>',
 };
+
+const SHARE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>';
 
 function el(tag, className, html) {
   const node = document.createElement(tag);
   if (className) node.className = className;
   if (html !== undefined) node.innerHTML = html;
   return node;
+}
+
+let toastTimer;
+function showToast(message) {
+  const toast = document.getElementById("share-toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 1600);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    return true;
+  } catch (e) {
+    return false;
+  }
 }
 
 function renderSocials() {
@@ -92,11 +145,8 @@ function renderLinks() {
   const container = document.getElementById("links");
   GENERAL_LINKS.forEach((link) => {
     const group = el("div", "link-group");
-
-    const a = el("a", "link-card");
-    a.href = link.url;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
+    const isLink = Boolean(link.url);
+    const hasMore = Boolean(link.more || link.moreHtml);
 
     const logoClasses = link.logoBare
       ? "link-icon link-icon--bare"
@@ -110,21 +160,110 @@ function renderLinks() {
 
     const iconHtml = link.logo
       ? `<span class="${logoClasses}"><img src="${link.logo}" alt="${link.title} logo" loading="lazy"${zoomStyle} onerror="this.parentElement.textContent='${link.icon}'; this.parentElement.className='link-icon';" /></span>`
-      : link.iconSvg
-        ? `<span class="link-icon link-icon--logo link-icon--svg">${ICONS[link.iconSvg] || ""}</span>`
-        : `<span class="link-icon">${link.icon}</span>`;
+      : link.iconKey
+        ? `<span class="link-icon link-icon--bare">${ICONS[link.iconKey] || ""}</span>`
+        : link.icon
+          ? `<span class="link-icon">${link.icon}</span>`
+          : "";
 
-    a.innerHTML = `
+    const bodyHtml = `
       ${iconHtml}
       <span>
         <div class="link-title">${link.title}</div>
         ${link.desc ? `<div class="link-desc">${link.desc}</div>` : ""}
       </span>
-      <span class="link-arrow" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      </span>
     `;
-    group.appendChild(a);
+
+    let card;
+
+    if (link.toggle) {
+      // Whole card click expands/collapses the panel beneath it, no navigation.
+      card = el("div", "link-card");
+      card.tabIndex = 0;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-expanded", "false");
+      card.innerHTML = bodyHtml;
+
+      const panel = el("div", "more-panel", link.more ? `<p>${link.more}</p>` : link.moreHtml);
+      panel.hidden = true;
+
+      panel.querySelectorAll("[data-copy]").forEach((row) => {
+        row.addEventListener("click", async (e) => {
+          e.stopPropagation();
+          const ok = await copyToClipboard(row.dataset.copy);
+          showToast(ok ? "Copied!" : "Couldn't copy");
+        });
+      });
+
+      const toggle = () => {
+        const expanded = card.getAttribute("aria-expanded") === "true";
+        card.setAttribute("aria-expanded", String(!expanded));
+        panel.hidden = expanded;
+      };
+      card.addEventListener("click", toggle);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggle();
+        }
+      });
+
+      group.appendChild(card);
+      group.appendChild(panel);
+    } else if (link.share) {
+      const copyValue = link.url || link.copyValue;
+      card = el("div", "link-card");
+      card.tabIndex = 0;
+      card.setAttribute("role", link.url ? "link" : "button");
+      card.innerHTML = `
+        <div class="card-top">
+          ${bodyHtml}
+          <button type="button" class="card-share" aria-label="Copy link for ${link.title}" title="Copy">${SHARE_ICON}</button>
+        </div>
+      `;
+
+      const primaryAction = async () => {
+        if (link.url) {
+          window.open(link.url, "_blank", "noopener,noreferrer");
+        } else {
+          const ok = await copyToClipboard(copyValue);
+          showToast(ok ? "Email copied!" : "Couldn't copy email");
+        }
+      };
+      card.addEventListener("click", (e) => {
+        if (e.target.closest(".card-share")) return;
+        primaryAction();
+      });
+      card.addEventListener("keydown", (e) => {
+        if ((e.key === "Enter" || e.key === " ") && !e.target.closest(".card-share")) {
+          e.preventDefault();
+          primaryAction();
+        }
+      });
+      card.querySelector(".card-share").addEventListener("click", async (e) => {
+        e.stopPropagation();
+        const ok = await copyToClipboard(copyValue);
+        showToast(ok ? "Copied!" : "Couldn't copy");
+      });
+
+      group.appendChild(card);
+    } else if (isLink) {
+      card = el("a", "link-card");
+      card.href = link.url;
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
+      card.innerHTML = `
+        ${bodyHtml}
+        <span class="link-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      `;
+      group.appendChild(card);
+    } else {
+      card = el("div", "link-card link-card--info");
+      card.innerHTML = bodyHtml;
+      group.appendChild(card);
+    }
 
     if (link.social) {
       const s = el("a", "link-social");
@@ -205,9 +344,17 @@ function initTheme() {
   });
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+function initShare() {
+  const btn = document.getElementById("share-btn");
+  btn.addEventListener("click", async () => {
+    const ok = await copyToClipboard(window.location.href);
+    showToast(ok ? "Link copied!" : "Couldn't copy link");
+  });
+}
+
 renderSocials();
 renderLinks();
 renderVideos();
 renderBlog();
 initTheme();
+initShare();
