@@ -14,8 +14,8 @@ const SOCIAL_LINKS = [
 const GENERAL_LINKS = [
   {
     iconKey: "mail",
-    title: "Want a website like this?",
-    desc: "Those interested in having a website like this one built for them for a one-time fee; send me an inquiry via email.",
+    title: "Do you like this website?",
+    desc: "Those interested in having a customized website with a similar purpose as this one, built for them, send me an inquiry via email and we'll chat.",
     copyValue: "sofia@brightlotus.ca",
     share: true,
   },
