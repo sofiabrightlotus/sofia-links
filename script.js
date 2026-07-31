@@ -168,7 +168,7 @@ function buildLinkGroup(link) {
 
     const bodyHtml = `
       ${iconHtml}
-      <span>
+      <span class="link-text">
         <div class="link-title">${link.title}</div>
         ${link.desc ? `<div class="link-desc">${link.desc}</div>` : ""}
       </span>
@@ -358,10 +358,12 @@ function initTheme() {
   });
 }
 
+const SITE_URL = "https://sofiabrightlotus.github.io/sofia-links/";
+
 function initShare() {
   const btn = document.getElementById("share-btn");
   btn.addEventListener("click", async () => {
-    const ok = await copyToClipboard(window.location.href);
+    const ok = await copyToClipboard(SITE_URL);
     showToast(ok ? "Link copied!" : "Couldn't copy link");
   });
 }

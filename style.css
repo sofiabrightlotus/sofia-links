@@ -306,14 +306,6 @@ button, input, textarea, select {
 
 .notice-card {
   background-color: #fbf1de;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent calc(1.6em - 1px),
-    rgba(74, 125, 189, 0.55) calc(1.6em - 1px),
-    rgba(74, 125, 189, 0.55) 1.6em
-  );
-  background-position: 0 50px;
   border-color: rgba(0, 0, 0, 0.1);
   color: #2c2c2c;
   position: relative;
@@ -328,6 +320,7 @@ button, input, textarea, select {
   left: 26px;
   width: 2px;
   background: #c62828;
+  z-index: 0;
 }
 
 .notice-card:hover {
@@ -335,17 +328,53 @@ button, input, textarea, select {
   border-color: rgba(0, 0, 0, 0.18);
 }
 
+.notice-card .card-top {
+  position: relative;
+  z-index: 1;
+}
+
+.notice-card .link-text {
+  display: block;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 25px,
+    rgba(74, 125, 189, 0.55) 25px,
+    rgba(74, 125, 189, 0.55) 26px
+  );
+}
+
+.notice-card .link-title,
+.notice-card .link-desc {
+  line-height: 26px;
+  margin: 0;
+}
+
 .notice-card .link-title { color: #1c1c1c; }
-.notice-card .link-desc { color: #2c2c2c; line-height: 1.6em; }
-.notice-card .link-icon { color: #2c2c2c; }
+.notice-card .link-desc { color: #2c2c2c; }
+
+.notice-card .link-icon {
+  color: #2c2c2c;
+  background-color: #fbf1de;
+  border-radius: 50%;
+}
+
+.notice-card:hover .link-icon {
+  background-color: #f7ead2;
+}
 
 .notice-card .card-share {
   color: #2c2c2c;
   border-color: rgba(0, 0, 0, 0.2);
+  background-color: #fbf1de;
+}
+
+.notice-card:hover .card-share {
+  background-color: #f7ead2;
 }
 
 .notice-card .card-share:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.35);
 }
 
