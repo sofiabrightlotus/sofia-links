@@ -656,9 +656,32 @@ button, input, textarea, select {
   gap: 12px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
-  padding: 2px 2px 10px;
+  padding: 2px 2px 14px;
   margin: 0 -2px;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg-2);
+}
+
+.featured-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.featured-grid::-webkit-scrollbar-track {
+  background: var(--bg-2);
+  border-radius: 999px;
+}
+
+.featured-grid::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+  border: 2px solid var(--bg-2);
+  background-clip: padding-box;
+}
+
+.featured-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-3);
+  background-clip: padding-box;
 }
 
 .featured-card {
