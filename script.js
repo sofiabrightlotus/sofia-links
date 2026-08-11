@@ -12,6 +12,11 @@ const SHOW_NOTICE = false;
 // follow row) in the Links section.
 const SHOW_PEACHY_KEEN = false;
 
+// Set to true to bring back the Links section at the bottom of the page.
+// Content stays defined in generalLinks() below either way — this only
+// hides the section from view.
+const SHOW_LINKS = false;
+
 // Language shown on first visit / when a visitor has no saved preference.
 const DEFAULT_LANG = "en";
 
@@ -60,6 +65,7 @@ const I18N = {
     socialsLabel: "My socials",
     statTotalViews: "Total views",
     statTotalFollowers: "Total followers",
+    statAcrossPlatforms: "across all platforms",
     featuredTitle: "Featured Reels",
     linksTitle: "Links",
     blogTitle: "Blog",
@@ -78,6 +84,7 @@ const I18N = {
     socialsLabel: "Mes réseaux",
     statTotalViews: "Vues totales",
     statTotalFollowers: "Total des abonnés",
+    statAcrossPlatforms: "toutes plateformes confondues",
     featuredTitle: "Reels en vedette",
     linksTitle: "Liens",
     blogTitle: "Blogue",
@@ -393,6 +400,9 @@ function buildLinkGroup(link) {
 
 function renderLinks(lang) {
   const container = document.getElementById("links");
+  const section = container.closest(".section");
+  if (!SHOW_LINKS) { section.style.display = "none"; return; }
+  section.style.display = "";
   container.innerHTML = "";
   generalLinks(lang).forEach((link) => {
     container.appendChild(buildLinkGroup(link));
@@ -555,10 +565,12 @@ async function renderStats(lang) {
     <div class="stat stat--wide">
       <div class="stat-value">${formatCompact(stats.totalViews)}</div>
       <div class="stat-label">${I18N[lang].statTotalViews}</div>
+      <div class="stat-sublabel">${I18N[lang].statAcrossPlatforms}</div>
     </div>
     <div class="stat stat--wide">
       <div class="stat-value">${formatCompact(totalFollowers)}</div>
       <div class="stat-label">${I18N[lang].statTotalFollowers}</div>
+      <div class="stat-sublabel">${I18N[lang].statAcrossPlatforms}</div>
     </div>
   `;
 }
