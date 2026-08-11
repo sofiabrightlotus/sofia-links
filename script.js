@@ -24,10 +24,10 @@ const SOCIAL_LINKS = [
 // web-compressed files (see videos/ and images/ — transcoded from the raw
 // phone exports with ffmpeg since those were 6-136MB each, too heavy to ship).
 const FEATURED_REELS = [
-  { badgeKey: "badgeTop", title: "Reel 01", url: "https://www.instagram.com/reel/DboWigQBl5j/", video: "videos/reel-1.mp4", poster: "images/reel-1-poster.jpg" },
+  { badgeKey: "badgeTop", title: "Reel 01", url: "https://www.instagram.com/reel/DbwLmGWh2xF/", video: "videos/reel-4.mp4", poster: "images/reel-4-poster.jpg" },
   { badgeKey: "badgeFavorite", title: "Reel 02", url: "https://www.instagram.com/reel/DbrHE-ah2GJ/", video: "videos/reel-2.mp4", poster: "images/reel-2-poster.jpg" },
   { badgeKey: "badgeFavorite", title: "Reel 03", url: "https://www.instagram.com/reel/Dbw8SHwBNLb/", video: "videos/reel-3.mp4", poster: "images/reel-3-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 04", url: "https://www.instagram.com/reel/DbwLmGWh2xF/", video: "videos/reel-4.mp4", poster: "images/reel-4-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 04", url: "https://www.instagram.com/reel/DboWigQBl5j/", video: "videos/reel-1.mp4", poster: "images/reel-1-poster.jpg" },
   { badgeKey: "badgeFavorite", title: "Reel 05", url: "https://www.instagram.com/reel/Db3JVcaBdXk/", video: "videos/reel-5.mp4", poster: "images/reel-5-poster.jpg" },
   { badgeKey: "badgeFavorite", title: "Reel 06", url: "https://www.instagram.com/reel/Dby1xL9BvNR/", video: "videos/reel-6.mp4", poster: "images/reel-6-poster.jpg" },
 ];
@@ -67,7 +67,7 @@ const I18N = {
     noticeDesc: "Those interested in having a customized website with a similar purpose as this one, built for them, send me an inquiry via email and we'll chat.",
     contactCardTitle: "Contact Details",
     badgeTop: "Most watched",
-    badgeFavorite: "Fan favorite",
+    badgeFavorite: "Fan favourite",
     viewOnInstagram: "View on Instagram",
     aboutCardTitle: "About Me",
     aboutText: "I'm a content creator building toward UGC as my full time craft. I write, shoot, and direct product videos and social content, turning everyday products into stories people actually stop to watch. Beyond the camera, I manage a handful of projects (links below), where I handle graphic design, marketing, and the planning and resourcing that keeps teams and timelines moving. Creativity and structure feed each other for me. Being close to both makes me sharper at each.",
