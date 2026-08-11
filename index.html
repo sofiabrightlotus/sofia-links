@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sofía — Links</title>
-<meta name="description" content="Sofía's links — social, projects, videos, and blog posts." />
+<title>Sofía — Creator Portfolio</title>
+<meta name="description" content="Sofía — skincare and lifestyle creator with a retro-tech aesthetic. Featured reels, socials, and contact for brand collabs." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Radley&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="bg-glow" aria-hidden="true"></div>
 
+  <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language" title="Switch language">FR</button>
   <button id="share-btn" class="share-btn" type="button" aria-label="Copy link to this page" title="Copy link">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>
   </button>
@@ -22,26 +23,34 @@
     <header class="profile">
       <img class="avatar" src="images/avatar-lotus.png" alt="Lotus flower" onerror="this.src='images/avatar-placeholder.svg'" />
       <h1 class="name">Sofía</h1>
-      <p class="bio">Building things, sharing what I learn. Links, videos, and posts below.</p>
+      <p class="bio" data-i18n="bio">Skincare-and-lifestyle creator with a soft spot for retro tech and film cameras.</p>
+
+      <div id="stats" class="stats-strip"></div>
 
       <nav class="socials" id="socials" aria-label="Social links"></nav>
-      <p class="socials-label">My socials</p>
+      <p class="socials-label" data-i18n="socialsLabel">My socials</p>
     </header>
+
+    <div id="intro-card" class="intro-card-section"></div>
+
+    <div id="contact-card" class="contact-card-section"></div>
+
+    <div id="about-card" class="about-card-section"></div>
 
     <div id="notice-card" class="notice-section"></div>
 
+    <section class="section" aria-labelledby="featured-heading">
+      <h2 id="featured-heading" class="section-title" data-i18n="featuredTitle">Featured Reels</h2>
+      <div id="featured" class="featured-grid"></div>
+    </section>
+
     <section class="section" aria-labelledby="links-heading">
-      <h2 id="links-heading" class="section-title">Links</h2>
+      <h2 id="links-heading" class="section-title" data-i18n="linksTitle">Links</h2>
       <div id="links" class="link-list"></div>
     </section>
 
-    <section class="section" aria-labelledby="videos-heading">
-      <h2 id="videos-heading" class="section-title">Videos</h2>
-      <div id="videos" class="video-grid"></div>
-    </section>
-
     <section class="section" aria-labelledby="blog-heading">
-      <h2 id="blog-heading" class="section-title">Blog</h2>
+      <h2 id="blog-heading" class="section-title" data-i18n="blogTitle">Blog</h2>
       <div id="blog" class="blog-list"></div>
     </section>
 

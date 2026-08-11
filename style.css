@@ -54,7 +54,7 @@ html, body {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Fredoka", "Times New Roman", Times, serif;
   line-height: 1.5;
   min-height: 100vh;
   overflow-x: hidden;
@@ -63,6 +63,35 @@ body {
 button, input, textarea, select {
   font-family: inherit;
   color: inherit;
+}
+
+.lang-toggle {
+  position: fixed;
+  top: 16px;
+  right: 66px;
+  z-index: 5;
+  height: 42px;
+  min-width: 42px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.lang-toggle:hover {
+  background: var(--card-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .share-btn {
@@ -156,16 +185,12 @@ button, input, textarea, select {
   background: var(--card);
 }
 
-.name,
-.section-title,
-.link-title,
-.video-title,
-.blog-title {
-  font-family: "Radley", Georgia, serif;
+.section-title {
+  font-family: "Space Mono", "Courier New", monospace;
 }
 
 .name {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
   letter-spacing: -0.01em;
@@ -176,6 +201,50 @@ button, input, textarea, select {
   font-size: 0.95rem;
   max-width: 380px;
   margin: 4px 0 18px;
+}
+
+.stats-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  min-width: 84px;
+}
+
+.stat--wide {
+  width: 100%;
+}
+
+.stat--wide .stat-value {
+  font-size: 1.3rem;
+}
+
+.stat-value {
+  font-family: "Space Mono", "Courier New", monospace;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-align: center;
+  line-height: 1.25;
 }
 
 .socials {
@@ -300,7 +369,10 @@ button, input, textarea, select {
 
 .card-share svg { width: 15px; height: 15px; }
 
-.notice-section {
+.notice-section,
+.intro-card-section,
+.contact-card-section,
+.about-card-section {
   margin-bottom: 36px;
 }
 
@@ -335,6 +407,8 @@ button, input, textarea, select {
 
 .notice-card .link-text {
   display: block;
+  position: relative;
+  z-index: 1;
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0,
@@ -439,6 +513,21 @@ button, input, textarea, select {
   font-size: 0.95rem;
 }
 
+.title-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  margin-right: 6px;
+  vertical-align: -0.15em;
+}
+
+.title-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 .link-desc {
   font-size: 0.82rem;
   color: var(--text-dim);
@@ -493,7 +582,6 @@ button, input, textarea, select {
   font-weight: 600;
   font-size: 1rem;
   color: var(--text);
-  font-family: "Radley", Georgia, serif;
 }
 
 .contact-row {
@@ -529,13 +617,45 @@ button, input, textarea, select {
   opacity: 0.6;
 }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+.contact-row--mail {
+  cursor: pointer;
+  transition: opacity .15s ease;
 }
 
-.video-card {
+.contact-row--mail:hover {
+  opacity: 0.75;
+}
+
+.copy-icon-btn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity .15s ease;
+  flex-shrink: 0;
+}
+
+.copy-icon-btn:hover {
+  opacity: 1;
+}
+
+.copy-icon-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.featured-card {
   display: block;
   border-radius: var(--radius);
   overflow: hidden;
@@ -547,25 +667,70 @@ button, input, textarea, select {
   transition: transform .15s ease, border-color .15s ease;
 }
 
-.video-card:hover {
+/* Editorial layout: hero item and closing item run full-width, the two
+   middle reels sit side by side — mixed sizes instead of a uniform grid. */
+.featured-card:first-child,
+.featured-card:last-child {
+  grid-column: 1 / -1;
+}
+
+.featured-card:first-child .featured-thumb,
+.featured-card:last-child .featured-thumb {
+  aspect-ratio: 16 / 9;
+}
+
+.featured-card:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
 }
 
-.video-thumb {
+.featured-thumb {
   position: relative;
-  aspect-ratio: 16 / 9;
-  background: var(--bg-2);
+  aspect-ratio: 4 / 5;
+  background:
+    linear-gradient(155deg, color-mix(in srgb, var(--accent) 55%, transparent), transparent 60%),
+    var(--bg-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.video-thumb img {
+.featured-card--tone-1 .featured-thumb { background: linear-gradient(155deg, var(--accent), var(--accent-3)); }
+.featured-card--tone-2 .featured-thumb { background: linear-gradient(155deg, var(--accent-2), var(--accent)); }
+.featured-card--tone-3 .featured-thumb { background: linear-gradient(155deg, var(--accent-3), var(--accent-4)); }
+.featured-card--tone-4 .featured-thumb { background: linear-gradient(155deg, var(--accent-4), var(--accent-2)); }
+
+.featured-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.video-play {
+.featured-thumb__mark {
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.featured-play {
   position: absolute;
   inset: 0;
   display: flex;
@@ -573,17 +738,85 @@ button, input, textarea, select {
   justify-content: center;
 }
 
-.video-play svg {
+.featured-play svg {
   width: 40px;
   height: 40px;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.5));
 }
 
-.video-title {
+.featured-title {
   padding: 10px 12px 12px;
   font-size: 0.85rem;
   font-weight: 600;
   line-height: 1.3;
+}
+
+.featured-grid--embed {
+  grid-template-columns: 1fr;
+}
+
+.featured-video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  overflow: hidden;
+}
+
+.featured-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+button.featured-play {
+  border: none;
+  background: transparent;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.featured-video-wrap.is-playing .featured-play,
+.featured-video-wrap.is-playing .featured-badge {
+  display: none;
+}
+
+.featured-view-link {
+  display: block;
+  padding: 0 12px 12px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.featured-view-link:hover {
+  color: var(--accent);
+}
+
+.featured-card--embed {
+  position: relative;
+  grid-column: 1 / -1 !important;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  background: var(--card);
+}
+
+.featured-card--embed .featured-badge {
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.featured-card--embed blockquote.instagram-media {
+  margin: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 480px !important;
 }
 
 .blog-list {
@@ -659,6 +892,7 @@ button, input, textarea, select {
 }
 
 @media (max-width: 420px) {
-  .video-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .featured-grid { grid-template-columns: 1fr; gap: 10px; }
+  .featured-card { grid-column: 1 / -1 !important; }
   .page { padding-top: 40px; }
 }
