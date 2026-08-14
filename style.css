@@ -247,14 +247,6 @@ button, input, textarea, select {
   line-height: 1.25;
 }
 
-.stat-sublabel {
-  font-size: 0.58rem;
-  color: var(--text-dim);
-  opacity: 0.7;
-  text-align: center;
-  line-height: 1.25;
-}
-
 .socials {
   display: flex;
   gap: 10px;

@@ -53,7 +53,7 @@ const FEATURED_MODE = "video";
 // scheduled GitHub Action (see .github/workflows/update-stats.yml).
 // totalViews is a manually-set combined figure across both platforms.
 const STATS_FALLBACK = {
-  instagramFollowers: 202,
+  instagramFollowers: 247,
   pinterestFollowers: 8,
   totalViews: 10000,
   updatedAt: null,
@@ -65,7 +65,6 @@ const I18N = {
     socialsLabel: "My socials",
     statTotalViews: "Total views",
     statTotalFollowers: "Total followers",
-    statAcrossPlatforms: "across all platforms",
     featuredTitle: "Featured Reels",
     linksTitle: "Links",
     blogTitle: "Blog",
@@ -77,14 +76,13 @@ const I18N = {
     viewOnInstagram: "View on Instagram",
     aboutCardTitle: "About Me",
     aboutText: "I'm a content creator building toward UGC as my full time craft. I write, shoot, and direct product videos and social content, turning everyday products into stories people actually stop to watch. Beyond the camera, I manage a handful of projects (links below), where I handle graphic design, marketing, and the planning and resourcing that keeps teams and timelines moving. Creativity and structure feed each other for me. Being close to both makes me sharper at each.",
-    introText: "I've worked with brands like Oh Canada Gifts, Kelowna Baskets, and Site Reports Online (among others) to create UGC and marketing content that helps their products connect with real audiences.",
+    introText: "I've worked with brands such as COSNORI K-beauty, Oh Canada Gifts, and Site Reports Online (among others) to create UGC and marketing content that helps their products connect with real audiences.",
   },
   fr: {
     bio: "Créatrice soins de la peau et style de vie avec une esthétique technologie rétro. Je partage simplement ce que j'utilise et que j'aime, de façon simple et honnête.",
     socialsLabel: "Mes réseaux",
     statTotalViews: "Vues totales",
     statTotalFollowers: "Total des abonnés",
-    statAcrossPlatforms: "toutes plateformes confondues",
     featuredTitle: "Reels en vedette",
     linksTitle: "Liens",
     blogTitle: "Blogue",
@@ -565,12 +563,10 @@ async function renderStats(lang) {
     <div class="stat stat--wide">
       <div class="stat-value">${formatCompact(stats.totalViews)}</div>
       <div class="stat-label">${I18N[lang].statTotalViews}</div>
-      <div class="stat-sublabel">${I18N[lang].statAcrossPlatforms}</div>
     </div>
     <div class="stat stat--wide">
       <div class="stat-value">${formatCompact(totalFollowers)}</div>
       <div class="stat-label">${I18N[lang].statTotalFollowers}</div>
-      <div class="stat-sublabel">${I18N[lang].statAcrossPlatforms}</div>
     </div>
   `;
 }
