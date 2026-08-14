@@ -30,11 +30,12 @@ const SOCIAL_LINKS = [
 // phone exports with ffmpeg since those were 6-136MB each, too heavy to ship).
 const FEATURED_REELS = [
   { badgeKey: "badgeTop", title: "Reel 01", url: "https://www.instagram.com/reel/DbwLmGWh2xF/", video: "videos/reel-4.mp4", poster: "images/reel-4-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 02", url: "https://www.instagram.com/reel/DbrHE-ah2GJ/", video: "videos/reel-2.mp4", poster: "images/reel-2-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 03", url: "https://www.instagram.com/reel/Dbw8SHwBNLb/", video: "videos/reel-3.mp4", poster: "images/reel-3-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 04", url: "https://www.instagram.com/reel/DboWigQBl5j/", video: "videos/reel-1.mp4", poster: "images/reel-1-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 05", url: "https://www.instagram.com/reel/Db3JVcaBdXk/", video: "videos/reel-5.mp4", poster: "images/reel-5-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 06", url: "https://www.instagram.com/reel/Dby1xL9BvNR/", video: "videos/reel-6.mp4", poster: "images/reel-6-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 02", url: null, video: "videos/reel-7.mp4", poster: "images/reel-7-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 03", url: "https://www.instagram.com/reel/DbrHE-ah2GJ/", video: "videos/reel-2.mp4", poster: "images/reel-2-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 04", url: "https://www.instagram.com/reel/Dbw8SHwBNLb/", video: "videos/reel-3.mp4", poster: "images/reel-3-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 05", url: "https://www.instagram.com/reel/DboWigQBl5j/", video: "videos/reel-1.mp4", poster: "images/reel-1-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 06", url: "https://www.instagram.com/reel/Db3JVcaBdXk/", video: "videos/reel-5.mp4", poster: "images/reel-5-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 07", url: "https://www.instagram.com/reel/Dby1xL9BvNR/", video: "videos/reel-6.mp4", poster: "images/reel-6-poster.jpg" },
 ];
 
 // "video"       — self-hosted video plays inline on click (no autoplay), with
@@ -53,7 +54,7 @@ const FEATURED_MODE = "video";
 // scheduled GitHub Action (see .github/workflows/update-stats.yml).
 // totalViews is a manually-set combined figure across both platforms.
 const STATS_FALLBACK = {
-  instagramFollowers: 397,
+  instagramFollowers: 402,
   pinterestFollowers: 8,
   totalViews: 10000,
   updatedAt: null,
@@ -473,7 +474,7 @@ function renderFeaturedVideo(container, lang) {
         </button>
       </div>
       <div class="featured-title">${reel.title}</div>
-      <a class="featured-view-link" href="${reel.url}" target="_blank" rel="noopener noreferrer">${I18N[lang].viewOnInstagram}</a>
+      ${reel.url ? `<a class="featured-view-link" href="${reel.url}" target="_blank" rel="noopener noreferrer">${I18N[lang].viewOnInstagram}</a>` : ""}
     `;
 
     const video = card.querySelector("video");
