@@ -76,7 +76,7 @@ const I18N = {
     badgeFavorite: "Fan favourite",
     viewOnInstagram: "View on Instagram",
     aboutCardTitle: "About Me",
-    aboutText: "I'm a content creator building toward UGC as my full time craft. I write, shoot, and direct product videos and social content, turning everyday products into stories people actually stop to watch. Beyond the camera, I manage a handful of projects (links below), where I handle graphic design, marketing, and the planning and resourcing that keeps teams and timelines moving. Creativity and structure feed each other for me. Being close to both makes me sharper at each.",
+    aboutText: "I'm a content creator building toward UGC as my full time craft. I write, shoot, and direct product videos and social content, turning everyday products into stories people actually stop to watch. Beyond the camera, I manage a handful of projects, where I handle graphic design, marketing, and the planning and resourcing that keeps teams and timelines moving. Creativity and structure feed each other for me. Being close to both makes me sharper at each.",
     introText: "I've worked with brands such as COSNORI K-beauty, Oh Canada Gifts, and Site Reports Online (among others) to create UGC and marketing content that helps their products connect with real audiences.",
   },
   fr: {
@@ -94,7 +94,7 @@ const I18N = {
     badgeFavorite: "Coup de cœur",
     viewOnInstagram: "Voir sur Instagram",
     aboutCardTitle: "À propos de moi",
-    aboutText: "Je suis créatrice de contenu et je bâtis mon métier autour du contenu généré par les utilisateurs (UGC), à temps plein. J'écris, je tourne et je réalise des vidéos de produits et du contenu pour les réseaux sociaux, transformant des produits du quotidien en histoires que les gens s'arrêtent réellement pour regarder. En dehors de la caméra, je gère plusieurs projets (liens ci-dessous), où je m'occupe du design graphique, du marketing, ainsi que de la planification et des ressources qui gardent les équipes et les échéanciers en mouvement. La créativité et la structure se nourrissent l'une l'autre chez moi. Être proche des deux me rend plus aiguisée dans chacune.",
+    aboutText: "Je suis créatrice de contenu et je bâtis mon métier autour du contenu généré par les utilisateurs (UGC), à temps plein. J'écris, je tourne et je réalise des vidéos de produits et du contenu pour les réseaux sociaux, transformant des produits du quotidien en histoires que les gens s'arrêtent réellement pour regarder. En dehors de la caméra, je gère plusieurs projets, où je m'occupe du design graphique, du marketing, ainsi que de la planification et des ressources qui gardent les équipes et les échéanciers en mouvement. La créativité et la structure se nourrissent l'une l'autre chez moi. Être proche des deux me rend plus aiguisée dans chacune.",
     introText: "J'ai collaboré avec des marques comme Oh Canada Gifts, Kelowna Baskets et Site Reports Online (entre autres) pour créer du contenu UGC et marketing qui aide leurs produits à rejoindre de vrais publics.",
   },
 };
