@@ -31,11 +31,12 @@ const SOCIAL_LINKS = [
 const FEATURED_REELS = [
   { badgeKey: "badgeTop", title: "Reel 01", url: "https://www.instagram.com/reel/DbwLmGWh2xF/", video: "videos/reel-4.mp4", poster: "images/reel-4-poster.jpg" },
   { badgeKey: "badgeFavorite", title: "Reel 02", url: null, video: "videos/reel-7.mp4", poster: "images/reel-7-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 03", url: "https://www.instagram.com/reel/DbrHE-ah2GJ/", video: "videos/reel-2.mp4", poster: "images/reel-2-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 04", url: "https://www.instagram.com/reel/Dbw8SHwBNLb/", video: "videos/reel-3.mp4", poster: "images/reel-3-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 05", url: "https://www.instagram.com/reel/DboWigQBl5j/", video: "videos/reel-1.mp4", poster: "images/reel-1-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 06", url: "https://www.instagram.com/reel/Db3JVcaBdXk/", video: "videos/reel-5.mp4", poster: "images/reel-5-poster.jpg" },
-  { badgeKey: "badgeFavorite", title: "Reel 07", url: "https://www.instagram.com/reel/Dby1xL9BvNR/", video: "videos/reel-6.mp4", poster: "images/reel-6-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 03", url: null, video: "videos/reel-8.mp4", poster: "images/reel-8-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 04", url: "https://www.instagram.com/reel/DbrHE-ah2GJ/", video: "videos/reel-2.mp4", poster: "images/reel-2-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 05", url: "https://www.instagram.com/reel/Dbw8SHwBNLb/", video: "videos/reel-3.mp4", poster: "images/reel-3-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 06", url: "https://www.instagram.com/reel/DboWigQBl5j/", video: "videos/reel-1.mp4", poster: "images/reel-1-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 07", url: "https://www.instagram.com/reel/Db3JVcaBdXk/", video: "videos/reel-5.mp4", poster: "images/reel-5-poster.jpg" },
+  { badgeKey: "badgeFavorite", title: "Reel 08", url: "https://www.instagram.com/reel/Dby1xL9BvNR/", video: "videos/reel-6.mp4", poster: "images/reel-6-poster.jpg" },
 ];
 
 // "video"       — self-hosted video plays inline on click (no autoplay), with
