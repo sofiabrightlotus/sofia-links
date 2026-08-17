@@ -54,9 +54,9 @@ const FEATURED_MODE = "video";
 // scheduled GitHub Action (see .github/workflows/update-stats.yml).
 // totalViews is a manually-set combined figure across both platforms.
 const STATS_FALLBACK = {
-  instagramFollowers: 402,
+  instagramFollowers: 597,
   pinterestFollowers: 8,
-  totalViews: 10000,
+  totalViews: 11000,
   updatedAt: null,
 };
 
