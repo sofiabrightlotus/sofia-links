@@ -149,10 +149,11 @@ img { max-width: 100%; display: block; }
 
 @media (min-width: 480px) {
   .hero-flower {
-    top: 4px;
-    right: 8px;
-    width: 46%;
-    max-width: 260px;
+    top: 40px;
+    right: -24px;
+    width: 56%;
+    max-width: 310px;
+    transform: rotate(-14deg);
     opacity: 0.9;
   }
 }
