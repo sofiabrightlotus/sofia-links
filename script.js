@@ -10,10 +10,10 @@ const DEFAULT_LANG = "en";
 const SOCIAL_LINKS = [
   { name: "Instagram", url: "https://www.instagram.com/sofiasidequests00/", icon: "instagram" },
   { name: "Pinterest", url: "https://ca.pinterest.com/00dohboi/", icon: "pinterest" },
-  { name: "TikTok", url: null, icon: "tiktok" },
-  { name: "YouTube", url: null, icon: "youtube" },
-  { name: "Threads", url: null, icon: "threads" },
-  { name: "Facebook", url: null, icon: "facebook" },
+  { name: "TikTok", url: "https://www.tiktok.com/@sofiasidequests00", icon: "tiktok" },
+  { name: "YouTube", url: "https://youtube.com/@sofiasidequests00", icon: "youtube" },
+  { name: "Threads", url: "https://www.threads.com/@sofiasidequests00", icon: "threads" },
+  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61593942565406", icon: "facebook" },
 ];
 
 // Featured strip, left to right. video/poster point at the self-hosted,
