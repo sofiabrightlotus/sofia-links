@@ -31,9 +31,9 @@ const FEATURED_TILES = [
 // scheduled GitHub Action (see .github/workflows/update-stats.yml).
 // totalViews is a manually-set combined figure across both platforms.
 const STATS_FALLBACK = {
-  instagramFollowers: 692,
+  instagramFollowers: 722,
   pinterestFollowers: 8,
-  totalViews: 20000,
+  totalViews: 26200,
   updatedAt: null,
 };
 
