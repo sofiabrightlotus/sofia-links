@@ -192,9 +192,10 @@ img { max-width: 100%; display: block; }
 .hero-stat { min-width: 0; }
 
 .hero-stat-label {
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-size: 0.8rem;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.72rem;
   color: var(--navy);
   opacity: 0.85;
   margin-bottom: 4px;
