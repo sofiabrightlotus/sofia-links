@@ -165,6 +165,8 @@ img { max-width: 100%; display: block; }
   font-size: clamp(2.6rem, 11vw, 4.2rem);
   line-height: 0.98;
   color: var(--navy);
+  -webkit-text-stroke: 2.5px var(--darkred);
+  paint-order: stroke fill;
   margin: 0 0 10px;
   text-transform: uppercase;
   max-width: 80%;
@@ -175,7 +177,7 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   font-size: 1.05rem;
   letter-spacing: 0.02em;
-  color: var(--navy);
+  color: var(--darkred);
   margin: 0;
 }
 
