@@ -14,7 +14,9 @@
   <main class="page">
     <section class="hero">
       <div class="hero-photo">
-        <img src="images/hero-photo.jpg" alt="" />
+        <video autoplay muted loop playsinline poster="images/hero-photo.jpg">
+          <source src="videos/hero.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="hero-panel">
         <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language" title="Switch language">FR</button>
@@ -61,7 +63,9 @@
           <img src="images/about-lotus-photo.png" alt="" aria-hidden="true" />
         </div>
         <div class="about-selfie">
-          <img src="images/about-selfie.jpg" alt="Sofía" />
+          <video autoplay muted loop playsinline poster="images/about-selfie.jpg" aria-label="Sofía">
+            <source src="videos/about-selfie.mp4" type="video/mp4" />
+          </video>
         </div>
         <div class="about-text" id="about-text"></div>
         <div class="about-block about-block--empty" aria-hidden="true"></div>
