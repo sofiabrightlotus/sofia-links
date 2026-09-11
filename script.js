@@ -11,9 +11,9 @@ const SOCIAL_LINKS = [
   { name: "Instagram", url: "https://www.instagram.com/sofiasidequests00/", icon: "instagram" },
   { name: "Pinterest", url: "https://ca.pinterest.com/00dohboi/", icon: "pinterest" },
   { name: "TikTok", url: "https://www.tiktok.com/@sofiasidequests00", icon: "tiktok" },
+  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61593942565406", icon: "facebook" },
   { name: "YouTube", url: "https://youtube.com/@sofiasidequests00", icon: "youtube" },
   { name: "Threads", url: "https://www.threads.com/@sofiasidequests00", icon: "threads" },
-  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61593942565406", icon: "facebook" },
 ];
 
 // Featured strip, left to right. video/poster point at the self-hosted,
