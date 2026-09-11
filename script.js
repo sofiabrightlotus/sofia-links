@@ -25,13 +25,17 @@ const FEATURED_TILES = [
   { video: "videos/tile-3.mp4", poster: "images/tile-3-poster.jpg", instagramUrl: null },
   { video: "videos/tile-4.mp4", poster: "images/tile-4-poster.jpg", instagramUrl: null },
   { video: "videos/tile-5.mp4", poster: "images/tile-5-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-6.mp4", poster: "images/tile-6-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-7.mp4", poster: "images/tile-7-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-8.mp4", poster: "images/tile-8-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-9.mp4", poster: "images/tile-9-poster.jpg", instagramUrl: null },
 ];
 
 // Seed values shown until data/stats.json has real numbers from the
 // scheduled GitHub Action (see .github/workflows/update-stats.yml).
 // totalViews is a manually-set combined figure across both platforms.
 const STATS_FALLBACK = {
-  instagramFollowers: 867,
+  instagramFollowers: 942,
   pinterestFollowers: 8,
   totalViews: 26200,
   updatedAt: null,
