@@ -9,7 +9,7 @@ const DEFAULT_LANG = "en";
 // until you have a real link for that platform.
 const SOCIAL_LINKS = [
   { name: "Instagram", url: "https://www.instagram.com/sofiasidequests00/", icon: "instagram" },
-  { name: "Pinterest", url: "https://ca.pinterest.com/00dohboi/", icon: "pinterest" },
+  { name: "Pinterest", url: "https://ca.pinterest.com/sofiasidequests00/", icon: "pinterest" },
   { name: "TikTok", url: "https://www.tiktok.com/@sofiasidequests00", icon: "tiktok" },
   { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61593942565406", icon: "facebook" },
   { name: "YouTube", url: "https://youtube.com/@sofiasidequests00", icon: "youtube" },
