@@ -31,6 +31,16 @@ const FEATURED_TILES = [
   { video: "videos/tile-9.mp4", poster: "images/tile-9-poster.jpg", instagramUrl: null },
 ];
 
+// Brands collaborated with. Set logo to an "images/..." path once you have
+// the file — until then, the brand name is shown as text instead.
+const BRANDS = [
+  { name: "COSNORI", logo: null, url: null },
+  { name: "iUNIK", logo: "images/brand-iunik.png", url: null },
+  { name: "Star Kitty Vintage", logo: "images/brand-star-kitty-vintage.png", url: null },
+  { name: "Kelowna Baskets", logo: null, url: null },
+  { name: "YesStyle", logo: "images/brand-yesstyle.png", url: null },
+];
+
 // Seed values shown until data/stats.json has real numbers from the
 // scheduled GitHub Action (see .github/workflows/update-stats.yml).
 // totalViews is a manually-set combined figure across both platforms.
@@ -48,9 +58,9 @@ const I18N = {
     statContact: "Contact",
     copyLink: "Copy URL link",
     featuredTitle: "Featured",
+    brandsTitle: "Brands I've Collaborated With",
     aboutTitle: "About me",
     aboutText: "I'm a content creator building toward UGC as my full time craft. I write, shoot, and direct product videos and social content, turning everyday products into stories people actually stop to watch. Beyond the camera, I manage a handful of projects, where I handle graphic design, marketing, and the planning and resourcing that keeps teams and timelines moving.",
-    workedWithText: "I've worked with COSNORI, iUNIK, Star Kitty Vintage, and Kelowna Baskets, creating unique content.",
     quoteText: "Creativity and structure feed each other for me. Being close to both makes me sharper at each.",
   },
   fr: {
@@ -59,9 +69,9 @@ const I18N = {
     statContact: "Contact",
     copyLink: "Copier le lien URL",
     featuredTitle: "En vedette",
+    brandsTitle: "Marques avec lesquelles j'ai collaboré",
     aboutTitle: "À propos",
     aboutText: "Je suis créatrice de contenu et je bâtis mon métier autour du contenu généré par les utilisateurs (UGC), à temps plein. J'écris, je tourne et je réalise des vidéos de produits et du contenu pour les réseaux sociaux, transformant des produits du quotidien en histoires que les gens s'arrêtent réellement pour regarder. En dehors de la caméra, je gère plusieurs projets, où je m'occupe du design graphique, du marketing, ainsi que de la planification et des ressources qui gardent les équipes et les échéanciers en mouvement.",
-    workedWithText: "J'ai collaboré avec COSNORI, iUNIK, Star Kitty Vintage et Kelowna Baskets pour créer du contenu unique.",
     quoteText: "La créativité et la structure se nourrissent l'une l'autre chez moi. Être proche des deux me rend plus aiguisée dans chacune.",
   },
   es: {
@@ -70,9 +80,9 @@ const I18N = {
     statContact: "Contacto",
     copyLink: "Copiar enlace URL",
     featuredTitle: "Destacados",
+    brandsTitle: "Marcas con las que he colaborado",
     aboutTitle: "Sobre mí",
     aboutText: "Soy creadora de contenido y estoy construyendo mi carrera en torno al contenido generado por usuarios (UGC) a tiempo completo. Escribo, filmo y dirijo videos de productos y contenido para redes sociales, convirtiendo productos cotidianos en historias que la gente realmente se detiene a ver. Más allá de la cámara, gestiono varios proyectos, donde me encargo del diseño gráfico, el marketing, y la planificación y los recursos que mantienen a los equipos y los plazos en movimiento.",
-    workedWithText: "He trabajado con COSNORI, iUNIK, Star Kitty Vintage y Kelowna Baskets, creando contenido único.",
     quoteText: "La creatividad y la estructura se alimentan mutuamente para mí. Estar cerca de ambas me hace más aguda en cada una.",
   },
 };
@@ -235,8 +245,31 @@ function applyStaticI18n(lang) {
 
 function renderAboutContent(lang) {
   document.getElementById("about-text").textContent = I18N[lang].aboutText;
-  document.getElementById("about-worked").textContent = I18N[lang].workedWithText;
-  document.getElementById("about-quote").textContent = I18N[lang].quoteText;
+  document.getElementById("about-worked").textContent = I18N[lang].quoteText;
+}
+
+function renderBrands() {
+  const container = document.getElementById("brands");
+  if (!container) return;
+  container.innerHTML = "";
+
+  BRANDS.forEach((brand) => {
+    const inner = brand.logo
+      ? `<img src="${brand.logo}" alt="${brand.name}" loading="lazy" />`
+      : `<span class="brand-card__name">${brand.name}</span>`;
+
+    if (brand.url) {
+      const a = el("a", "brand-card", inner);
+      a.href = brand.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.setAttribute("aria-label", brand.name);
+      container.appendChild(a);
+    } else {
+      const div = el("div", "brand-card", inner);
+      container.appendChild(div);
+    }
+  });
 }
 
 function renderForLang(lang) {
@@ -265,6 +298,7 @@ function initLang() {
 
 renderSocials();
 renderFeatured();
+renderBrands();
 renderStats();
 initLang();
 initTheme();
