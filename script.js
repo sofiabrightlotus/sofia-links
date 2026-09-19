@@ -64,7 +64,21 @@ const I18N = {
     workedWithText: "J'ai collaboré avec COSNORI, iUNIK, Star Kitty Vintage et Kelowna Baskets pour créer du contenu unique.",
     quoteText: "La créativité et la structure se nourrissent l'une l'autre chez moi. Être proche des deux me rend plus aiguisée dans chacune.",
   },
+  es: {
+    statTotalViews: "Vistas totales",
+    statFollowers: "Seguidores",
+    statContact: "Contacto",
+    copyLink: "Copiar enlace URL",
+    featuredTitle: "Destacados",
+    aboutTitle: "Sobre mí",
+    aboutText: "Soy creadora de contenido y estoy construyendo mi carrera en torno al contenido generado por usuarios (UGC) a tiempo completo. Escribo, filmo y dirijo videos de productos y contenido para redes sociales, convirtiendo productos cotidianos en historias que la gente realmente se detiene a ver. Más allá de la cámara, gestiono varios proyectos, donde me encargo del diseño gráfico, el marketing, y la planificación y los recursos que mantienen a los equipos y los plazos en movimiento.",
+    workedWithText: "He trabajado con COSNORI, iUNIK, Star Kitty Vintage y Kelowna Baskets, creando contenido único.",
+    quoteText: "La creatividad y la estructura se alimentan mutuamente para mí. Estar cerca de ambas me hace más aguda en cada una.",
+  },
 };
+
+// Cycle order for the language toggle button.
+const LANGS = ["en", "fr", "es"];
 
 // ---------------------------------------------------------------------------
 // Rendering (no need to edit below this line)
@@ -230,16 +244,21 @@ function renderForLang(lang) {
   renderAboutContent(lang);
 }
 
+function nextLang(lang) {
+  const i = LANGS.indexOf(lang);
+  return LANGS[(i + 1) % LANGS.length];
+}
+
 function initLang() {
   const toggle = document.getElementById("lang-toggle");
   let lang = localStorage.getItem("lang") || DEFAULT_LANG;
   renderForLang(lang);
-  toggle.textContent = lang === "en" ? "FR" : "EN";
+  toggle.textContent = nextLang(lang).toUpperCase();
 
   toggle.addEventListener("click", () => {
-    lang = lang === "en" ? "fr" : "en";
+    lang = nextLang(lang);
     localStorage.setItem("lang", lang);
-    toggle.textContent = lang === "en" ? "FR" : "EN";
+    toggle.textContent = nextLang(lang).toUpperCase();
     renderForLang(lang);
   });
 }
