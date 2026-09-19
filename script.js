@@ -89,9 +89,6 @@ const I18N = {
   },
 };
 
-// Cycle order for the language toggle button.
-const LANGS = ["en", "fr", "es"];
-
 // ---------------------------------------------------------------------------
 // Rendering (no need to edit below this line)
 // ---------------------------------------------------------------------------
@@ -279,22 +276,26 @@ function renderForLang(lang) {
   renderAboutContent(lang);
 }
 
-function nextLang(lang) {
-  const i = LANGS.indexOf(lang);
-  return LANGS[(i + 1) % LANGS.length];
-}
-
 function initLang() {
-  const toggle = document.getElementById("lang-toggle");
+  const buttons = document.querySelectorAll(".lang-btn");
   let lang = localStorage.getItem("lang") || DEFAULT_LANG;
-  renderForLang(lang);
-  toggle.textContent = nextLang(lang).toUpperCase();
 
-  toggle.addEventListener("click", () => {
-    lang = nextLang(lang);
-    localStorage.setItem("lang", lang);
-    toggle.textContent = nextLang(lang).toUpperCase();
-    renderForLang(lang);
+  const setActive = () => {
+    buttons.forEach((btn) => {
+      btn.classList.toggle("is-active", btn.dataset.lang === lang);
+    });
+  };
+
+  renderForLang(lang);
+  setActive();
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      lang = btn.dataset.lang;
+      localStorage.setItem("lang", lang);
+      setActive();
+      renderForLang(lang);
+    });
   });
 }
 
