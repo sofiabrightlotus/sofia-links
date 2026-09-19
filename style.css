@@ -363,45 +363,60 @@ a.hero-stat-value--link:hover { opacity: 0.7; }
 /* ---------------------------------------------------------------------- */
 
 .brands {
-  background: var(--pink);
-  padding: 40px 24px 44px;
+  background: var(--darkred);
+  padding: 40px 24px 48px;
 }
 
 .brands .block-title {
-  margin: 0 0 24px;
-  color: var(--navy);
-  -webkit-text-stroke: 2px var(--darkred);
+  margin: 0 0 28px;
 }
 
 .brands-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 22px 18px;
+  padding: 8px 0;
 }
 
 .brand-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 110px;
-  padding: 18px;
-  border-radius: 14px;
+  width: 140px;
+  height: 140px;
+  padding: 16px;
+  border-radius: 12px;
   background: var(--cream);
-  transition: transform .15s ease;
+  box-shadow: 0 6px 16px -4px rgba(0, 0, 0, .45);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-a.brand-card:hover { transform: translateY(-2px); }
+.brand-card:hover,
+a.brand-card:hover {
+  transform: rotate(0deg) scale(1.06) !important;
+  box-shadow: 0 10px 22px -4px rgba(0, 0, 0, .55);
+  z-index: 2;
+}
+
+.brands-grid .brand-card:nth-child(6n+1) { transform: rotate(-6deg); }
+.brands-grid .brand-card:nth-child(6n+2) { transform: rotate(4deg); }
+.brands-grid .brand-card:nth-child(6n+3) { transform: rotate(-3deg); }
+.brands-grid .brand-card:nth-child(6n+4) { transform: rotate(5deg); }
+.brands-grid .brand-card:nth-child(6n+5) { transform: rotate(-5deg); }
+.brands-grid .brand-card:nth-child(6n+6) { transform: rotate(3deg); }
 
 .brand-card img {
   max-width: 100%;
-  max-height: 64px;
+  max-height: 100%;
   object-fit: contain;
 }
 
 .brand-card__name {
   font-family: "Space Mono", monospace;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-align: center;
@@ -409,7 +424,7 @@ a.brand-card:hover { transform: translateY(-2px); }
 }
 
 @media (min-width: 640px) {
-  .brands-grid { grid-template-columns: repeat(4, 1fr); }
+  .brand-card { width: 160px; height: 160px; }
 }
 
 /* ---------------------------------------------------------------------- */

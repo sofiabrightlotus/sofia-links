@@ -34,11 +34,13 @@ const FEATURED_TILES = [
 // Brands collaborated with. Set logo to an "images/..." path once you have
 // the file — until then, the brand name is shown as text instead.
 const BRANDS = [
-  { name: "COSNORI", logo: null, url: null },
+  { name: "COSNORI", logo: "images/brand-cosnori.jpg", url: null },
   { name: "iUNIK", logo: "images/brand-iunik.png", url: null },
   { name: "Star Kitty Vintage", logo: "images/brand-star-kitty-vintage.png", url: null },
-  { name: "Kelowna Baskets", logo: null, url: null },
+  { name: "Kelowna Baskets", logo: "images/brand-kelowna-baskets.jpg", url: null },
   { name: "YesStyle", logo: "images/brand-yesstyle.png", url: null },
+  { name: "Haruharu Wonder", logo: "images/brand-haruharu-wonder.jpg", url: null },
+  { name: "Triips", logo: "images/brand-triips.png", url: null },
 ];
 
 // Seed values shown until data/stats.json has real numbers from the
