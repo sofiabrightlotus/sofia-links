@@ -29,6 +29,14 @@ const FEATURED_TILES = [
   { video: "videos/tile-7.mp4", poster: "images/tile-7-poster.jpg", instagramUrl: null },
   { video: "videos/tile-8.mp4", poster: "images/tile-8-poster.jpg", instagramUrl: null },
   { video: "videos/tile-9.mp4", poster: "images/tile-9-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-10.mp4", poster: "images/tile-10-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-11.mp4", poster: "images/tile-11-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-12.mp4", poster: "images/tile-12-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-13.mp4", poster: "images/tile-13-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-14.mp4", poster: "images/tile-14-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-15.mp4", poster: "images/tile-15-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-16.mp4", poster: "images/tile-16-poster.jpg", instagramUrl: null },
+  { video: "videos/tile-17.mp4", poster: "images/tile-17-poster.jpg", instagramUrl: null },
 ];
 
 // Brands collaborated with. Set logo to an "images/..." path once you have
